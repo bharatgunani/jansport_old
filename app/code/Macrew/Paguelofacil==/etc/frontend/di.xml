@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Macrew\Paguelofacil\Model\Directpost">
+        <arguments>
+            <argument name="session" xsi:type="object">Magento\Checkout\Model\Session</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Url\SecurityInfo">
+        <arguments>
+            <argument name="secureUrlList" xsi:type="array">
+                <item name="paguelofacil" xsi:type="string">/paguelofacil/</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Macrew\Paguelofacil\Model\Paguelofacil">
+        <arguments>
+            <argument name="session" xsi:type="object">Magento\Checkout\Model\Session</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Payment\Model\CcGenericConfigProvider">
+        <arguments>
+            <argument name="methodCodes" xsi:type="array">
+                <item name="directpost" xsi:type="const">Macrew\Paguelofacil\Model\Directpost::METHOD_CODE</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="DirectpostIframeCcConfigProvider" type="Magento\Payment\Model\IframeConfigProvider">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Macrew\Paguelofacil\Model\Directpost::METHOD_CODE</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="paguelofacil_directpost_cc_config_provider" xsi:type="object">Macrew\Paguelofacil\Model\configProvider</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

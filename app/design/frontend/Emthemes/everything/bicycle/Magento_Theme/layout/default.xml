@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>      
+        <!-- header area -->
+
+        <move element="header-wrapper" destination="header.bottom" />
+        <referenceContainer name="header.container">
+              <container name="header.panel.wrapper" htmlTag="div" htmlClass="em-header-top em-fixed-top" />              
+        </referenceContainer>
+        <move element="header.panel" destination="header.panel.wrapper" />
+        <referenceContainer name="header.panel" htmlClass="container-fluid em-menu-fix-pos">                      
+            <container name="header.bottom" htmlClass="header menu wrapper" htmlTag="div" after="logo"/>
+            <container name="store.settings.wrapper" htmlClass="em-lan-cur-link-search" htmlTag="div" after="header.bottom">
+                <block class="Magento\Store\Block\Switcher" name="store_language" as="store_language" template="switch/languages.phtml"/>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="header-wrapper">
+            <container name="header-wrapper-container" htmlTag="div" htmlClass="header-wrapper-container" before="-">
+                  <container name="header-wrapper-left" htmlTag="div" htmlClass="header-wrapper-left" before="-" />
+                  <container name="header-wrapper-right" htmlTag="div" htmlClass="header-wrapper-right" after="-" />
+            </container>
+            
+            <container name="topNavigation" label="Top Navigation" htmlTag="div" htmlClass="top-navigation" after="logo" />
+        </referenceContainer>        
+      
+        
+     	
+        <move element="catalog.topnav" destination="store.menu" />
+        <move element="store_switcher" destination="store.settings.wrapper" before="top.links" />
+        <move element="top.links" destination="store.settings.wrapper" before="top.search" />
+        <move element="topNavigation" destination="store.menu" />
+        <move element="logo" destination="header-wrapper-left" after="skip_to_content" />
+        <move element="store.settings.wrapper" destination="header-wrapper-right" after="-" />
+        <move element="skip_to_content" destination="header-wrapper-right" before="-" />       
+        <referenceContainer name="header-wrapper-right">
+            <block class="Magento\Framework\View\Element\Template" name="navigation.sections" after="logo" template="Magento_Theme::html/sections.phtml">
+                <arguments>
+                    <argument name="group_name" xsi:type="string">navigation-sections</argument>
+                    <argument name="group_css" xsi:type="string">nav-sections</argument>
+                </arguments>
+                <block class="Magento\Framework\View\Element\Template" name="store.menu" group="navigation-sections" template="Magento_Theme::html/container.phtml">
+                    <arguments>
+                        <argument name="title" translate="true" xsi:type="string">Menu</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Text" name="store.links" group="navigation-sections">
+                    <arguments>
+                        <argument name="title" translate="true" xsi:type="string">Account</argument>
+                        <argument name="use_force" xsi:type="boolean">true</argument>
+                        <argument name="text" xsi:type="string"><![CDATA[<!-- Account links -->]]></argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Template" name="store.settings" group="navigation-sections" template="Magento_Theme::html/container.phtml">
+                    <arguments>
+                        <argument name="title" translate="true" xsi:type="string">Settings</argument>
+                    </arguments>
+                    <block class="Magento\Store\Block\Switcher" name="store.settings.language" template="switch/languages.phtml">
+                        <arguments>
+                            <argument name="id_modifier" xsi:type="string">nav</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Directory\Block\Currency" name="store.settings.currency" before="store_language" template="currency.phtml">
+                        <arguments>
+                            <argument name="id_modifier" xsi:type="string">nav</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </block>
+        </referenceContainer>   
+        <referenceContainer name="main.content">
+              <container name="main_wrapper" htmlTag="div" htmlClass="main-wrapper" after="-" />
+       	  <container name="main.content.full" htmlTag="div" htmlClass="main-content-full" label="Main Content Full" after="-"/>
+        </referenceContainer>
+	  <referenceContainer name="footer-container">
+            <container name="em.maxwidth.content" htmlTag="div" htmlClass="em-maxwidth-content" before="-"/>
+        </referenceContainer>
+		<move element="footer_top" destination="em.maxwidth.content"/>
+		<move element="footer_bottom" destination="em.maxwidth.content"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+
+        <move element="footer" destination="footer_bottom"/>
+    </body>
+</page>

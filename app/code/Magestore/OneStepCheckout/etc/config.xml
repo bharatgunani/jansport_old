@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_OneStepCheckout
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <onestepcheckout>
+            <general>
+                <active>1</active>
+                <show_shipping_address>1</show_shipping_address>
+                <country_id>US</country_id>
+                <postcode>90034</postcode>
+                <region_id>12</region_id>
+                <use_for_disabled_fields>1</use_for_disabled_fields>
+                <checkout_title>One step checkout</checkout_title>
+                <checkout_description>Please fill in the fields below and click Place order to complete your purchase!
+                </checkout_description>
+                <page_style>material</page_style>
+                <page_layout>25columns</page_layout>
+                <enable_items_image>1</enable_items_image>
+                <suggest_address>1</suggest_address>
+                <show_discount>1</show_discount>
+            </general>
+            <field_management>
+                <show_city>1</show_city>
+                <show_zipcode>1</show_zipcode>
+                <show_company>0</show_company>
+                <show_fax>0</show_fax>
+                <show_telephone>1</show_telephone>
+                <show_region>1</show_region>
+                <show_comment>0</show_comment>
+                <show_newsletter>0</show_newsletter>
+                <show_discount>0</show_discount>
+                <redirect_to_checkout>0</redirect_to_checkout>
+                <suggest_address>0</suggest_address>
+                <enable_giftmessage>0</enable_giftmessage>
+            </field_management>
+            <field_position_management>
+                <position>test</position>
+                <row_0>firstname</row_0>
+                <row_1>lastname</row_1>
+                <row_2>email</row_2>
+                <row_3>telephone</row_3>
+                <row_4>street</row_4>
+                <row_5>0</row_5>
+                <row_6>country_id</row_6>
+                <row_7>0</row_7>
+                <row_8>city</row_8>
+                <row_9>0</row_9>
+                <row_10>postcode</row_10>
+                <row_11>region</row_11>
+                <row_12>company</row_12>
+                <row_13>fax</row_13>
+                <row_14>0</row_14>
+            </field_position_management>
+            <field_require_management>
+                <company>0</company>
+                <street>1</street>
+                <country_id>1</country_id>
+                <region>1</region>
+                <city>1</city>
+                <postcode>1</postcode>
+                <telephone>1</telephone>
+                <fax>0</fax>
+            </field_require_management>
+            <checkout_mode>
+                <show_login_link>1</show_login_link>
+                <enable_registration>1</enable_registration>
+                <allow_guest>1</allow_guest>
+                <login_link_title/>
+            </checkout_mode>
+            <ajax_update>
+                <enable_ajax>1</enable_ajax>
+                <ajax_fields>country_id,postcode,region,city</ajax_fields>
+                <update_payment>1</update_payment>
+                <reload_section>1</reload_section>
+                <address_shipping>1</address_shipping>
+                <address_payment>1</address_payment>
+                <address_review>1</address_review>
+                <shipping_payment>1</shipping_payment>
+                <shipping_review>1</shipping_review>
+                <payment_review>1</payment_review>
+            </ajax_update>
+            <terms_conditions>
+                <enable_terms>0</enable_terms>
+                <term_width>400</term_width>
+                <term_height>250</term_height>
+            </terms_conditions>
+            <order_notification>
+                <enable_notification>0</enable_notification>
+                <template>onestepcheckout_order_notification_template</template>
+            </order_notification>
+            <geoip>
+                <enable>0</enable>
+            </geoip>
+            <style_management>
+                <button>black</button>
+                <style>black</style>
+            </style_management>
+        </onestepcheckout>
+    </default>
+</config>

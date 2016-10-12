@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <paguelofacil_directpost>
+                <active>0</active>
+                <cctypes>AE,VI,MC,DI</cctypes>
+                <email_customer>0</email_customer>
+                <cclw backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <merchant_email />
+                <model>Macrew\Paguelofacil\Model\Directpost</model>
+                <order_status>processing</order_status>
+                <payment_action>authorize</payment_action>
+                <test>1</test>
+                <title>Credit Card Direct Post (Paguelofacil)</title>
+                <allowspecific>0</allowspecific>
+                <currency>USD</currency>
+                <create_order_before>1</create_order_before>
+                <date_delim>/</date_delim>
+                <ccfields>x_card_code,x_exp_date,x_card_num</ccfields>
+                <place_order_url>paguelofacil/directpost_payment/place</place_order_url>
+                <post_url_action>https://test.authorize.net/gateway/transact.dll</post_url_action>
+            </paguelofacil_directpost>
+        </payment>
+    </default>
+</config>

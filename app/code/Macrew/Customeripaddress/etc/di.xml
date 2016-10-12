@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <!-- this one doesn't work for a controller action -->
+    <preference for="Magento\Customer\Controller\Account\CreatePost" 
+         type="Macrew\Customeripaddress\Controller\Account\CreatePost" />
+</config>

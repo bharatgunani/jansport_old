@@ -1,0 +1,92 @@
+<?php
+
+/**
+ * Magestore
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Magestore
+ * @package     Magestore_OneStepCheckout
+ * @copyright   Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license     http://www.magestore.com/license-agreement.html
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magestore\OneStepCheckout\Block\Adminhtml\Sales\Order\View\Tab\Information $block */
+$survey = $block->getSurvey();
+$comment = $block->getComment();
+?>
+<?php if($this->getLastItem()) {?>
+<?php echo "</table>"; ?>
+<?php if($survey->getId()):?>
+<div class="entry-edit">
+	<fieldset>
+	<div class="survey">
+		<div class="entry-edit-head">
+			<h4 class="icon-head head-account">
+				<?php echo __('Survey Information') ?>
+			</h4>
+		</div>
+	</div>
+	<div class="grid">
+		<div class="hor-scroll">
+			<table cellspacing="0" class="data">
+				<tbody>
+					<tr class="odd">
+						<td class="a-left" style="width:25%;border-right:none !important;font-weight:bold" >
+							<?php echo __('Survey Question :') ?></td>
+						<td class="a-left">
+							<?php echo $survey->getQuestion();?>
+						</td>
+					</tr>
+					<tr class="even">
+						<td class="a-left" style="width:25%;border-right:none !important;font-weight:bold">
+							<?php echo __('Answer: ') ?></td>
+						<td class="a-left">
+							<?php echo $survey->getAnswer();?>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	</fieldset>
+</div>
+<?php endif;?>
+<?php if($comment):?>
+<div class="entry-edit" >
+	<fieldset>
+		<div class="survey">
+			<div class="entry-edit-head">
+				<h4 class="icon-head head-account">
+					<?php echo __('Comment') ?>
+				</h4>
+			</div>
+		</div>
+		<div class="grid">
+			<div class="hor-scroll">
+				<table cellspacing="0" class="data">
+					<tbody>
+						<tr class="even">
+							<td class="a-left">
+							<?php echo $comment;?>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<?php endif;?>
+<?php } ?>

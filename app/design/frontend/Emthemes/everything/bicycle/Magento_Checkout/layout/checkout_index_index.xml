@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <referenceContainer name="header.container">
+            <container name="header.panel.wrapper.checkout" htmlClass="panel wrapper" htmlTag="div" before="-">
+                  <container name="header.panel.checkout" htmlTag="div" htmlClass="panel header" before="-">
+                        <block class="Magento\Theme\Block\Html\Header\Logo" name="logo.checkout">
+                          <arguments>
+                              <argument name="logo_img_width" xsi:type="number">189</argument>
+                              <argument name="logo_img_height" xsi:type="number">64</argument>
+                          </arguments>
+                      </block>
+                </container>           
+          </container>            
+        </referenceContainer>
+    </body>
+</page>
+

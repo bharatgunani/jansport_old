@@ -1,0 +1,43 @@
+<?php
+
+$om = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $om->get('Magento\Store\Model\StoreManagerInterface');
+$currentStore = $storeManager->getStore();
+
+ 
+ ?>
+
+<div class="col-md-24 cms-custom">
+<div class="row">
+<p><img class="banner-img" src="<?php echo $currentStore->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA); ?>wysiwyg/FAQ_AAA_8570.jpg" alt="FAQ" /></p>
+</div>
+<div class="page-title-wrapper">
+<h1 class="page-title"><span class="base" data-ui-id="page-title-wrapper">FAQ</span></h1>
+</div>
+
+
+
+    <?php $faqs = $block->getFaq()->getData(); ?>
+	<div id="element">
+		<?php foreach($faqs as $faq) {?>
+				<div data-role="collapsible">
+					<div class="cls_trigger" data-role="trigger"><span> <a><?php echo $faq['question']; ?></a> </span></div>
+				</div>
+				<div class="acc_content" data-role="content">
+					<p>&nbsp;</p>
+					<p>
+						<?php echo $faq['answer'] ?>
+					</p>
+					<p>&nbsp;</p>
+				</div>
+		<?php } ?>
+	</div>
+</div>
+
+<script type="text/javascript">// <![CDATA[
+    require([
+        'jquery',
+        'tabs'], function ($) {
+        $("#element").accordion({heightStyle: 'content'});
+    });
+// ]]></script>

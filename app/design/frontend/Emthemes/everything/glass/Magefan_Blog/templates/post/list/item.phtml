@@ -1,0 +1,37 @@
+<?php
+/**
+ * Copyright © 2015 Ihor Vansach (ihor@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog post list item template
+ *
+ * @var $block \Magefan\Blog\Block\Post\AbstractPost
+ */
+?>
+<?php
+    $_post = $this->getPost();
+    $_postUrl = $_post->getPostUrl();
+    $_postName = $block->escapeHtml($_post->getTitle(), null, true);
+    $_helper = $this->helper('Magefan\Blog\Helper\Image');
+    $_width = 280;
+    $_height = 280;
+    $img = $_helper->init($_post->getImage())->resize($_width,$_height);
+?>
+			<!-- Renders images. @Options (thumbnail,low_resoulution, high_resolution) -->
+<div class="insta_img_container">
+		<?php if($img): ?>
+			
+				<a href="<?php echo $_postUrl ?>">
+					<img style="width:100%;" class="img-responsive" src="<?php echo $img ?>" alt="<?php echo $_post->getTitle() ?>">
+				</a>
+			
+		<?php endif ?>
+			<a class="post-item-link" style="letter-spacing: 4px;width: 100%;float: left;margin-top: 18px;font-size: 18px;font-weight:bold;" href="<?php echo $_postUrl ?>"><?php echo $_postName; ?></a>
+			<br>
+				<a style="float:right;" class="post-read-more" href="<?php echo $_postUrl ?>" title="<?php echo $_postName ?>"><?php echo __('Read more &#187;') ?></a>
+</div>

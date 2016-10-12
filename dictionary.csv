@@ -1,0 +1,25 @@
+"More Information","More Information"
+label,label
+Loading...,Loading...
+Emthemes,Emthemes
+"Quick Shop","Quick Shop"
+General,General
+Enabled,Enabled
+"Show More Info Tab","Show More Info Tab"
+"Show Reviews Tab","Show Reviews Tab"
+"Quick Shop Label","Quick Shop Label"
+"Label for Quick Shop Button","Label for Quick Shop Button"
+"Auto add buttons","Auto add buttons"
+"Add Quick Shop buttons to products list automatically.<br />However, you can also use <br /> <code>echo $this->helper('Emthemes\QuickShop\Helper\Data')</code><br /><code>->getQuickShopButton($_product)</code><br /> to customize your template.","Add Quick Shop buttons to products list automatically.<br />However, you can also use <br /> <code>echo $this->helper('Emthemes\QuickShop\Helper\Data')</code><br /><code>->getQuickShopButton($_product)</code><br /> to customize your template."
+"Product Item Class","Product Item Class"
+"Use comma (,) to separate different item class. Default is <em>.product-item</em>","Use comma (,) to separate different item class. Default is <em>.product-item</em>"
+"Target Class","Target Class"
+"The element CSS class that Quick Shop button will be appended to. Default is <em>.product-item-info</em>.","The element CSS class that Quick Shop button will be appended to. Default is <em>.product-item-info</em>."
+Main,Main
+none,none
+Overview,Overview
+"More Info","More Info"
+Details,Details
+Reviews,Reviews
+Options,Options
+Downloads,Downloads

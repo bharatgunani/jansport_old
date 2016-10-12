@@ -1,0 +1,91 @@
+.products-grid .product-item-info
+{	border: none;
+}
+.products-grid .product-item-info.active, .products-grid .product-item-info:hover
+{	box-shadow:0px 0px 0px #fff;
+}
+.products-grid a.qs-button
+{	border-radius: 0;
+    font-family: "Raleway";
+    font-size: 18px;
+    font-weight: normal;
+    height: auto;
+    padding: 5px 10px;
+    width: auto;
+}
+.products-grid a.qs-button span
+{	font-size: 18px;	
+}
+.products-grid a.qs-button::before
+{	content: "";
+}
+.products-grid .actions-secondary
+{	display: none !important;
+}
+.products-grid .swatch-more
+{	width: 23.5%;
+}
+.products-grid .product-item-details .swatch-option,
+.products-grid .product-item-details .swatch-option.image:hover:not(.disabled), .product-item-details .swatch-option.color:hover:not(.disabled)
+{	width: 23.5%;	
+}
+#quickshop-info-main.product-info-main
+{	border: none;		
+}	
+#quickshop .quickshop-wrapper .quickshop-tabs
+{	width: 50%;	
+}
+#quickshop .quickshop-wrapper .quickshop-tabs .actions .action.primary
+{	width: auto;	
+}
+.qs-modal .product-info-main .page-title-wrapper h1
+{	font-size: 20px;
+}
+.modal-popup .modal-title
+{	display: none;
+}
+.best-seller .product-items .owl-item .product-item-info
+{	width: 100% !important; min-height: inherit;	
+}
+.product-info-main .page-title-wrapper h1
+{	font-size: 30px !important;
+}
+.product-info-main
+{	border-radius:0px; border: none;
+}
+.product-info-main .product-reviews-summary
+{	float: none; margin-top: 0px; border-top:1px solid #ccc; margin-bottom: 10px; 
+}
+.product-info-main .product-info-price
+{	border-bottom: 1px solid #ccc;	
+}
+.swatch-attribute-options
+{	margin-left: -13px;
+}
+.product-options-bottom .field.qty
+{	margin-bottom: 15px; padding: 10px 0px; border-top:1px solid #ccc; border-bottom:1px solid #ccc; 		
+}
+.product-options-bottom .product-addto-links
+{	margin-top: 0px;	
+}
+.product-options-bottom .product-addto-links
+{	width: auto;
+}
+.product-options-bottom .actions .tocart
+{	width: auto; min-width: 250px;
+}
+.product-social-links .em-addthis
+{	margin: 0px; background: none;	
+}
+.em-addthis a
+{	width: auto; padding: 2px 13px; margin-right: 10px; border: none; background: #787878;
+}
+.em-addthis a span
+{	color: #fff;	
+}
+.em-addthis a:hover
+{	background: #333;	
+}
+#quickshop-info-main .swatch-attribute-options
+{	margin-left: -7px;
+}
